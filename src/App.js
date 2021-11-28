@@ -1,11 +1,21 @@
+import { Route, Switch } from "react-router";
 import "./App.css";
-import MyBtn from "./components/MyBtn";
+import Navbar from "./components/Navbar";
+import MedsPage from "./Pages/MedsPage";
+import PetsPage from "./Pages/PetsPage";
 
 function App() {
   return (
     <div>
-      <h2>App</h2>
-      <MyBtn />
+      <Navbar />
+      <Switch>
+        <Route path="/pets">
+          <PetsPage />
+        </Route>
+        <Route path="/meds">
+          <MedsPage />
+        </Route>
+      </Switch>
     </div>
   );
 }
