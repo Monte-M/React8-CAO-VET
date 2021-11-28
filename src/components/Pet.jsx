@@ -10,8 +10,8 @@ function Pet() {
       <h4>2001-12-25</h4>
       <h4>petras@petras.lt</h4>
       <div>
-        <OrangeBtn />
-        <WhiteBtn />
+        <OrangeBtn title="VIEW LOG" />
+        <WhiteBtn title="DELETE" />
       </div>
     </div>
   );

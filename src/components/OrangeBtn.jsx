@@ -1,7 +1,7 @@
 import css from "./OrangeBtn.module.css";
 
-function MyBtn() {
-  return <button className={css.container}>VIEW LOG</button>;
+function MyBtn({ title }) {
+  return <button className={css.container}>{title}</button>;
 }
 
 export default MyBtn;

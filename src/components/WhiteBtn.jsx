@@ -1,7 +1,7 @@
 import css from "./WhiteBtn.module.css";
 
-function MyBtn() {
-  return <button className={css.container}>DELETE</button>;
+function MyBtn({ title }) {
+  return <button className={css.container}>{title}</button>;
 }
 
 export default MyBtn;
