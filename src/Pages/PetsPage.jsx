@@ -1,9 +1,14 @@
 import React from "react";
+import Pet from "../components/Pet";
+import css from "./PetsPage.module.css";
 
 function PetsPage() {
   return (
-    <div>
-      <h2>Pets page</h2>
+    <div className="container">
+      <h1>Pet list</h1>
+      <div className={css.petList}>
+        <Pet />
+      </div>
     </div>
   );
 }

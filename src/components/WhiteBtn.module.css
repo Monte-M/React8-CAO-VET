@@ -1,0 +1,11 @@
+.container {
+  padding: 5px;
+  border: 1px solid orange;
+  color: orange;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  padding: 7px;
+  width: 100px;
+  font-weight: bold;
+  cursor: pointer;
+}
