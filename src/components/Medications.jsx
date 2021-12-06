@@ -2,12 +2,12 @@ import React from "react";
 
 import css from "./Medications.module.css";
 
-function Pet() {
+function Pet({ medication }) {
   return (
     <div className={css.container}>
-      <h3>Huberium Celliulitus</h3>
-      <h4>Description</h4>
-      <h4>2016-01-01</h4>
+      <h3>{medication.name}</h3>
+      <h4>{medication.description}</h4>
+      <h4>{medication.date}</h4>
     </div>
   );
 }

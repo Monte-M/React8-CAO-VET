@@ -11,14 +11,24 @@ function Pet({ pet, dob }) {
   const currentDate = new Date(dob);
   const petDate = currentDate.toLocaleDateString("lt", options);
 
+  const handleClickFunction = () => {
+    const id = pet.id;
+    console.log("clicked on", id);
+  };
+
+  const handleDeleteFunction = () => {
+    const id = pet.id;
+    console.log("delete", id);
+  };
+
   return (
-    <div className={css.container}>
+    <div className={css.container} id={pet.id}>
       <h3>{pet.name}</h3>
       <h4>{petDate}</h4>
       <h4>{pet.owner}</h4>
       <div>
-        <OrangeBtn title='VIEW LOG' />
-        <WhiteBtn title='DELETE' />
+        <OrangeBtn title='VIEW LOG' handleClick={handleClickFunction} />
+        <WhiteBtn title='DELETE' handleClick={handleDeleteFunction} />
       </div>
     </div>
   );
