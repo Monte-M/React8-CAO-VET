@@ -5,6 +5,8 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import Log from "../components/Log";
 import Prescription from "../components/Prescription";
+import { Link } from "react-router-dom";
+import AddPresForm from "../components/UI/AddPresForm";
 
 function LogsPage() {
   const { id } = useParams();
@@ -13,6 +15,8 @@ function LogsPage() {
   const [pres, setPres] = useState([]);
   const [showPres, setShowPres] = useState(true);
   const [showLogs, setShowLogs] = useState(true);
+  const [showPresForm, setShowPresForm] = useState(false);
+  const [showLogsForm, setShowLogsForm] = useState(false);
 
   const getPet = async () => {
     const resp = await fetch(`http://localhost:4000/v1/pets/${id}`);
@@ -44,6 +48,14 @@ function LogsPage() {
     setShowLogs(!showLogs);
   };
 
+  const displayPresForm = () => {
+    setShowPresForm(!showPresForm);
+  };
+
+  const displayLogsForm = () => {
+    setShowLogsForm(!showLogsForm);
+  };
+
   const petName = pet && <h1>{pet[0]?.name}: Health Records</h1>;
 
   return (
@@ -51,8 +63,24 @@ function LogsPage() {
       <div className={css.addPrescription}>
         {petName}
         <div className={css.topButtons}>
-          <OrangeBtn title='ADD PRESCRIPTION' />
-          <WhiteBtn title='ADD LOG' />
+          {showPresForm ? (
+            <OrangeBtn title='ADD PRESCRIPTION' handleClick={displayPresForm} />
+          ) : (
+            <OrangeBtn
+              title='ADD PRESCRIPTION'
+              handleClick={displayPresForm}
+              className='inActive'
+            />
+          )}
+          {showLogsForm ? (
+            <OrangeBtn title='ADD LOG' handleClick={displayLogsForm} />
+          ) : (
+            <OrangeBtn
+              title='ADD LOG'
+              handleClick={displayLogsForm}
+              className='inActive'
+            />
+          )}
         </div>
       </div>
       <div className={css.displayButtons}>
@@ -89,6 +117,7 @@ function LogsPage() {
           <h2>This pet has no logs or prescriptions</h2>
         )}
       </div>
+      {showPresForm && <AddPresForm id={id} />}
     </div>
   );
 }

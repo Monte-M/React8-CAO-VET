@@ -1,11 +1,12 @@
 import { Route, Switch } from "react-router";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import AddPet from "./Pages/AddPet";
+import AddPetPage from "./Pages/AddPetPage";
 import LogsPage from "./Pages/LogsPage";
 import MedsPage from "./Pages/MedsPage";
 import PetsPage from "./Pages/PetsPage";
 import { Toaster } from "react-hot-toast";
+import AddPrescriptionPage from "./Pages/AddPrescriptionPet";
 
 function App() {
   return (
@@ -20,7 +21,10 @@ function App() {
           <MedsPage />
         </Route>
         <Route path='/addPet'>
-          <AddPet />
+          <AddPetPage />
+        </Route>
+        <Route path='/addPres'>
+          <AddPrescriptionPage />
         </Route>
         <Route path='/logs/:id'>
           <LogsPage />

@@ -13,6 +13,7 @@ function Prescription({ pres, presDate }) {
       <h4>{pres.name}</h4>
       <h4>{pres.description}</h4>
       <h4>{prescriptionDate}</h4>
+      <h4>comment: {pres.comment}</h4>
     </div>
   );
 }
