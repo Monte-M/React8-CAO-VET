@@ -30,7 +30,7 @@ function PetsPage() {
       </div>
       <div className={css.petList}>
         {petsArr.map((pet) => (
-          <Pet key={pet.id} pet={pet} dob={pet.dob} />
+          <Pet key={pet.id} pet={pet} dob={pet.dob} owner={pet.owner} />
         ))}
       </div>
     </div>

@@ -3,6 +3,7 @@ import OrangeBtn from "./OrangeBtn";
 import WhiteBtn from "./WhiteBtn";
 import css from "./Pet.module.css";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Pet({ pet, dob }) {
   const options = {
@@ -12,24 +13,27 @@ function Pet({ pet, dob }) {
   const currentDate = new Date(dob);
   const petDate = currentDate.toLocaleDateString("lt", options);
 
-  const handleClickFunction = () => {
+  const handleDeleteFunction = async () => {
     const id = pet.id;
-    console.log("clicked on", id);
-  };
-
-  const handleDeleteFunction = () => {
-    const id = pet.id;
-    console.log("delete", id);
+    const resp = await fetch(`http://localhost:4000/v1/pets/${id}`, {
+      method: "DELETE",
+    });
+    const data = await resp.json();
+    console.log(data);
+    if (data.msg === "pet archived") {
+      window.location.reload();
+      toast.success("Pet successfully archived");
+    }
   };
 
   return (
     <div className={css.container} id={pet.id}>
       <h3>{pet.name}</h3>
       <h4>{petDate}</h4>
-      <h4>{pet.owner}</h4>
+      <h4>{pet.client_email}</h4>
       <div>
         <Link to={`/logs/${pet.id}`}>
-          <OrangeBtn title='VIEW LOG' handleClick={handleClickFunction} />
+          <OrangeBtn title='VIEW LOG' />
         </Link>
         <WhiteBtn title='DELETE' handleClick={handleDeleteFunction} />
       </div>

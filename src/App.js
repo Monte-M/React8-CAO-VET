@@ -5,11 +5,13 @@ import AddPet from "./Pages/AddPet";
 import LogsPage from "./Pages/LogsPage";
 import MedsPage from "./Pages/MedsPage";
 import PetsPage from "./Pages/PetsPage";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div>
       <Navbar />
+      <Toaster />
       <Switch>
         <Route exact path='/'>
           <PetsPage />

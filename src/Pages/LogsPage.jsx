@@ -30,8 +30,6 @@ function LogsPage() {
     setPres(data.result);
   };
 
-  console.log(pres);
-
   useEffect(() => {
     getPet();
     getLogs();
