@@ -50,3 +50,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.whiteBtn {
+  background-color: white;
+}

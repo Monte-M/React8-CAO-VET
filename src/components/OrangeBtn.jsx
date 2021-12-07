@@ -1,8 +1,8 @@
 import css from "./OrangeBtn.module.css";
 
-function MyBtn({ title, handleClick }) {
+function MyBtn({ title, handleClick, className }) {
   return (
-    <button onClick={handleClick} className={css.container}>
+    <button onClick={handleClick} className={css.container + " " + className}>
       {title}
     </button>
   );

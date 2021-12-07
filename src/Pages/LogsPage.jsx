@@ -46,10 +46,12 @@ function LogsPage() {
     setShowLogs(!showLogs);
   };
 
+  const petName = pet && <h1>{pet[0]?.name}: Health Records</h1>;
+
   return (
     <div className='container'>
       <div className={css.addPrescription}>
-        {pet && <h1>{pet[0]?.name}: Health Records</h1>}
+        {petName}
         <div className={css.topButtons}>
           <OrangeBtn title='ADD PRESCRIPTION' />
           <WhiteBtn title='ADD LOG' />
@@ -57,8 +59,24 @@ function LogsPage() {
       </div>
       <div className={css.displayButtons}>
         <h3>Display:</h3>
-        <OrangeBtn title='LOGS ✓' handleClick={displayLogs} />
-        <OrangeBtn title='PRESCRIPTIONS ✓' handleClick={displayPres} />
+        {showLogs ? (
+          <OrangeBtn title='LOGS ✓' handleClick={displayLogs} />
+        ) : (
+          <OrangeBtn
+            title='LOGS'
+            handleClick={displayLogs}
+            className='inActive'
+          />
+        )}
+        {showPres ? (
+          <OrangeBtn title='PRESCRIPTIONS ✓' handleClick={displayPres} />
+        ) : (
+          <OrangeBtn
+            title='PRESCRIPTIONS'
+            handleClick={displayPres}
+            className='inActive'
+          />
+        )}
       </div>
       <div className={css.logsContainer}>
         {showLogs &&

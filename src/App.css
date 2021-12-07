@@ -13,7 +13,7 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-/* .orange {
+.orangeBtn {
   padding: 5px;
   border: 1px solid orange;
   color: white;
@@ -25,14 +25,7 @@ body {
   cursor: pointer;
 }
 
-.white {
-  padding: 5px;
-  border: 1px solid orange;
-  color: orange;
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 5px;
-  padding: 7px;
-  width: 100px;
-  font-weight: bold;
-  cursor: pointer;
-} */
+.inActive {
+  color: orange !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+}

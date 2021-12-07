@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Pet from "../components/Pet";
 import css from "./PetsPage.module.css";
 import OrangeBtn from "../components/OrangeBtn";
+import { Link } from "react-router-dom";
 
 function PetsPage() {
   const [petsArr, setPetsArr] = useState([]);
@@ -23,7 +24,9 @@ function PetsPage() {
     <div className='container'>
       <div className={css.addPet}>
         <h1>Pet list:</h1>
-        <OrangeBtn title='ADD PET' />
+        <Link to='/addPet'>
+          <OrangeBtn title='ADD PET' />
+        </Link>
       </div>
       <div className={css.petList}>
         {petsArr.map((pet) => (
