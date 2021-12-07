@@ -22,7 +22,7 @@ function PetsPage() {
   return (
     <div className='container'>
       <div className={css.addPet}>
-        <h1>Pet list</h1>
+        <h1>Pet list:</h1>
         <OrangeBtn title='ADD PET' />
       </div>
       <div className={css.petList}>

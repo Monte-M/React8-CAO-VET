@@ -1,0 +1,52 @@
+.logsContainer {
+  display: flex;
+}
+
+.addPrescription {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addPrescription h1 {
+  color: rgb(54, 54, 54);
+  font-weight: normal;
+}
+
+.displayButtons h3 {
+  color: rgb(54, 54, 54);
+  font-weight: normal;
+}
+
+.topButtons {
+  display: flex;
+}
+
+.topButtons button {
+  width: 200px;
+}
+
+.topButtons button:nth-child(2) {
+  width: 150px;
+  margin-left: 5px;
+}
+
+.displayButtons {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.displayButtons button {
+  margin: 0 3px;
+  width: 150px;
+}
+
+.displayButtons button:nth-child(2) {
+  margin: 0 3px;
+  width: 100px;
+}
+
+.medsList {
+  display: flex;
+  flex-wrap: wrap;
+}

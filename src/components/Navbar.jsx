@@ -11,6 +11,7 @@ function Navbar() {
       />
       <nav>
         <NavLink to='/'>Pets</NavLink>
+
         <NavLink to='/meds'>Medications</NavLink>
       </nav>
     </header>

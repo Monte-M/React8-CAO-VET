@@ -12,3 +12,27 @@ body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
+/* .orange {
+  padding: 5px;
+  border: 1px solid orange;
+  color: white;
+  background-color: orange;
+  border-radius: 5px;
+  padding: 7px;
+  width: 100px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.white {
+  padding: 5px;
+  border: 1px solid orange;
+  color: orange;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  padding: 7px;
+  width: 100px;
+  font-weight: bold;
+  cursor: pointer;
+} */
