@@ -1,5 +1,6 @@
 .logsContainer {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .addPrescription {
