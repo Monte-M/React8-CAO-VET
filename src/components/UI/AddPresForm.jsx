@@ -59,6 +59,7 @@ const AddPresForm = ({ id }) => {
     <div className={css.container}>
       <h1>Add Prescription</h1>
       <form onSubmit={formik.handleSubmit} className={css.form}>
+        <label htmlFor='medication_id'>Vaccine:</label>
         {medsArr && (
           <select
             className={css.select}

@@ -1,12 +1,11 @@
 import css from "./LogsPage.module.css";
 import OrangeBtn from "../components/OrangeBtn";
-import WhiteBtn from "../components/WhiteBtn";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import Log from "../components/Log";
 import Prescription from "../components/Prescription";
-import { Link } from "react-router-dom";
 import AddPresForm from "../components/UI/AddPresForm";
+import AddLogForm from "../components/UI/AddLogForm";
 
 function LogsPage() {
   const { id } = useParams();
@@ -49,10 +48,16 @@ function LogsPage() {
   };
 
   const displayPresForm = () => {
+    if (showLogsForm) {
+      setShowLogsForm(false);
+    }
     setShowPresForm(!showPresForm);
   };
 
   const displayLogsForm = () => {
+    if (showPresForm) {
+      setShowPresForm(false);
+    }
     setShowLogsForm(!showLogsForm);
   };
 
@@ -118,6 +123,7 @@ function LogsPage() {
         )}
       </div>
       {showPresForm && <AddPresForm id={id} />}
+      {showLogsForm && <AddLogForm id={id} />}
     </div>
   );
 }

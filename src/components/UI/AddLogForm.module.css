@@ -25,10 +25,10 @@
 .select {
   padding: 10px;
   width: 200px;
+  margin-bottom: 15px;
 }
 
 .form input {
   padding: 10px;
   width: 200px;
-  margin-top: 15px;
 }

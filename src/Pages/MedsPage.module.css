@@ -46,3 +46,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.addMed {
+  display: flex;
+  justify-content: space-between;
+}
