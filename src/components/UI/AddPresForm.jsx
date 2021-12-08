@@ -30,7 +30,6 @@ const AddPresForm = ({ id }) => {
         body: JSON.stringify(values),
       });
       const data = await resp.json();
-      console.log(data);
 
       if (data.error) {
         toast.error("Please check the form");
@@ -45,11 +44,9 @@ const AddPresForm = ({ id }) => {
   const getMeds = async () => {
     const resp = await fetch("http://localhost:4000/v1/meds");
     const data = await resp.json();
-    console.log(data.result);
+
     setMedsArr(data.result);
   };
-
-  console.log(medsArr);
 
   useEffect(() => {
     getMeds();

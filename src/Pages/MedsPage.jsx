@@ -9,7 +9,7 @@ function MedsPage() {
   const getMeds = async () => {
     const resp = await fetch("http://localhost:4000/v1/meds");
     const data = await resp.json();
-    console.log(data.result);
+
     setMedsArr(data.result);
   };
 

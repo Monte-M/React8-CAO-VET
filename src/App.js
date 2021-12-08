@@ -7,6 +7,7 @@ import MedsPage from "./Pages/MedsPage";
 import PetsPage from "./Pages/PetsPage";
 import { Toaster } from "react-hot-toast";
 import AddPrescriptionPage from "./Pages/AddPrescriptionPet";
+import AddMedForm from "./components/UI/AddMedForm";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path='/addPet'>
           <AddPetPage />
+        </Route>
+        <Route path='/addMed'>
+          <AddMedForm />
         </Route>
         <Route path='/addPres'>
           <AddPrescriptionPage />

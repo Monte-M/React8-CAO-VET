@@ -29,7 +29,6 @@ const AddPetForm = () => {
         body: JSON.stringify(values),
       });
       const data = await resp.json();
-      console.log(data);
 
       if (data.error) {
         toast.error("Please check the form");
@@ -73,7 +72,7 @@ const AddPetForm = () => {
           value={formik.values.client_email}
           error={formik.touched.client_email && formik.errors.client_email}
         />
-        <OrangeBtn type='submit' title='Register' />
+        <OrangeBtn type='submit' title='Add pet' />
       </form>
     </div>
   );

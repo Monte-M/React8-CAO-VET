@@ -19,7 +19,7 @@ function Pet({ pet, dob }) {
       method: "DELETE",
     });
     const data = await resp.json();
-    console.log(data);
+
     if (data.msg === "pet archived") {
       window.location.reload();
       toast.success("Pet successfully archived");
