@@ -37,6 +37,7 @@ function LogsPage() {
     getPet();
     getLogs();
     getPres();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const displayPres = () => {

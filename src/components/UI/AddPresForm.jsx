@@ -67,7 +67,7 @@ const AddPresForm = ({ id }) => {
             value={Number(formik.values.medication_id)}
             error={formik.touched.medication_id && formik.errors.medication_id}
           >
-            {medsArr.map(({ id, name }) => (
+            {medsArr?.map(({ id, name }) => (
               <option key={id} value={id}>
                 {name}
               </option>

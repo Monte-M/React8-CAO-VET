@@ -39,10 +39,3 @@ body {
   background-color: #1d1c1c;
   min-height: 100vh;
 }
-
-.dark * h1,
-h2,
-h3,
-h4 {
-  /* color: white !important; */
-}

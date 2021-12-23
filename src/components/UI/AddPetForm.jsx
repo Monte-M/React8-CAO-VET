@@ -9,9 +9,9 @@ import OrangeBtn from "../OrangeBtn";
 const AddPetForm = () => {
   const formik = useFormik({
     initialValues: {
-      name: "Vasia",
-      dob: "2020-05-04",
-      client_email: "test@gmail.com",
+      name: "",
+      dob: "",
+      client_email: "",
     },
 
     validationSchema: Yup.object({

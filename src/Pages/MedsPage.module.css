@@ -51,3 +51,7 @@
   display: flex;
   justify-content: space-between;
 }
+
+.dark {
+  color: white;
+}
