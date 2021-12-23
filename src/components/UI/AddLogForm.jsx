@@ -5,6 +5,8 @@ import * as Yup from "yup";
 import toast from "react-hot-toast";
 import OrangeBtn from "../OrangeBtn";
 
+const beURL = process.env.REACT_APP_BE_API;
+
 const AddLogForm = ({ id }) => {
   const formik = useFormik({
     initialValues: {
@@ -20,7 +22,7 @@ const AddLogForm = ({ id }) => {
     }),
 
     onSubmit: async (values) => {
-      const resp = await fetch(`http://localhost:4000/v1/logs`, {
+      const resp = await fetch(`${beURL}/v1/logs`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

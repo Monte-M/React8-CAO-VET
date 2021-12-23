@@ -5,6 +5,8 @@ import css from "./Pet.module.css";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
+const beURL = process.env.REACT_APP_BE_API;
+
 function Pet({ pet, dob }) {
   const options = {
     dateStyle: "short",
@@ -15,7 +17,7 @@ function Pet({ pet, dob }) {
 
   const handleDeleteFunction = async () => {
     const id = pet.id;
-    const resp = await fetch(`http://localhost:4000/v1/pets/${id}`, {
+    const resp = await fetch(`${beURL}/${id}`, {
       method: "DELETE",
     });
     const data = await resp.json();

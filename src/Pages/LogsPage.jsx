@@ -7,6 +7,8 @@ import Prescription from "../components/Prescription";
 import AddPresForm from "../components/UI/AddPresForm";
 import AddLogForm from "../components/UI/AddLogForm";
 
+const beURL = process.env.REACT_APP_BE_API;
+
 function LogsPage() {
   const { id } = useParams();
   const [pet, setPet] = useState([]);
@@ -18,17 +20,17 @@ function LogsPage() {
   const [showLogsForm, setShowLogsForm] = useState(false);
 
   const getPet = async () => {
-    const resp = await fetch(`http://localhost:4000/v1/pets/${id}`);
+    const resp = await fetch(`${beURL}/v1/pets/${id}`);
     const data = await resp.json();
     setPet(data.result);
   };
   const getLogs = async () => {
-    const resp = await fetch(`http://localhost:4000/v1/logs/${id}`);
+    const resp = await fetch(`${beURL}/v1/logs/${id}`);
     const data = await resp.json();
     setLogs(data.result);
   };
   const getPres = async () => {
-    const resp = await fetch(`http://localhost:4000/v1/pres/${id}`);
+    const resp = await fetch(`${beURL}/v1/pres/${id}`);
     const data = await resp.json();
     setPres(data.result);
   };

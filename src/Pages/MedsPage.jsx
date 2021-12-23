@@ -4,10 +4,12 @@ import Medications from "../components/Medications";
 import css from "./MedsPage.module.css";
 import OrangeBtn from "../components/OrangeBtn";
 
+const beURL = process.env.REACT_APP_BE_API;
+
 function MedsPage() {
   const [medsArr, setMedsArr] = useState([]);
   const getMeds = async () => {
-    const resp = await fetch("http://localhost:4000/v1/meds");
+    const resp = await fetch(`${beURL}/v1/meds`);
     const data = await resp.json();
 
     setMedsArr(data.result);

@@ -4,10 +4,12 @@ import css from "./PetsPage.module.css";
 import OrangeBtn from "../components/OrangeBtn";
 import { Link } from "react-router-dom";
 
+const beURL = process.env.REACT_APP_BE_API;
+
 function PetsPage() {
   const [petsArr, setPetsArr] = useState([]);
   const getPets = async () => {
-    const resp = await fetch("http://localhost:4000/v1/pets");
+    const resp = await fetch(`${beURL}/v1/pets`);
     const data = await resp.json();
     setPetsArr(data.result);
   };

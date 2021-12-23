@@ -6,6 +6,8 @@ import * as Yup from "yup";
 import toast from "react-hot-toast";
 import OrangeBtn from "../OrangeBtn";
 
+const beURL = process.env.REACT_APP_BE_API;
+
 const AddPresForm = ({ id }) => {
   const [medsArr, setMedsArr] = useState([]);
   const formik = useFormik({
@@ -22,7 +24,7 @@ const AddPresForm = ({ id }) => {
     }),
 
     onSubmit: async (values) => {
-      const resp = await fetch(`http://localhost:4000/v1/pres`, {
+      const resp = await fetch(`${beURL}/v1/pres`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +44,7 @@ const AddPresForm = ({ id }) => {
   });
 
   const getMeds = async () => {
-    const resp = await fetch("http://localhost:4000/v1/meds");
+    const resp = await fetch(`${beURL}/v1/meds`);
     const data = await resp.json();
 
     setMedsArr(data.result);
